@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Third-Person Cube</title>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.3/dist/aframe-physics-system.min.js"></script>
+    <script src="ocean/a-water.v0.1.1.min.js"></script>
+</head>
+<body>
+    <a-scene physics="debug: false">
+        <a-assets></a-assets><a-asset-item id="ship" src="https://raw.githubusercontent.com/RussianDraco/3D-7Cs/refs/heads/main/models/ship/ship.gltf"></a-asset-item></a-assets>
+        
+        
+        <a-sky color="#87CEEB"></a-sky>
+        
+        <!-- <a-plane static-body position="0 0 0" rotation="-90 0 0" width="500" height="500" color="gray"></a-plane> -->
+        <a-ocean></a-ocean>
+
+
+        <a-box static-body position="2 1 0" width="1" height="1" depth="1" color="green"></a-box>
+        
+        <a-entity id="player-camera" camera look-controls position="0 7 2"></a-entity>
+        
+        <a-entity id="player" gltf-model="#ship" static-body position="0 5 0" scale="0.15 0.15 0.15" rotation="0 180 0" modify-materials></a-entity>
+
+    </a-scene>
+    <script src="script.js"></script>
+</body>
+</html>
